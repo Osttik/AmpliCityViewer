@@ -11,7 +11,7 @@ function post(url, data) {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors', // no-cors, *cors, same-origin
         headers,
-        body: JSON.stringify({ data: data })
+        body: JSON.stringify(data)
     }).then(resp => resp.json());
 }
 
