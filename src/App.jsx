@@ -40,6 +40,7 @@ function App() {
     <div>
       <Sidebar />
       <MapComponent />
+      <button onClick={() => postData({"abx":"abs"})} style={{position: "absolute", top: "50vh", left: "50vw"}}>Add</button>
     </div>
   )
 }

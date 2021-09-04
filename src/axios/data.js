@@ -11,7 +11,7 @@ function post(url, data) {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors', // no-cors, *cors, same-origin
         headers,
-        body: JSON.stringify({ data: data, value: 22 })
+        body: JSON.stringify({ data: data })
     }).then(resp => resp.json());
 }
 
@@ -20,6 +20,7 @@ export const headers = {
     'Access-Control-Allow-Headers': 'X-PINGOTHER, Content-Type',
     'Access-Control-Allow-Origin': "*",
     'Access-Control-Allow-Credentials': true,
+    "Content-Type": "application/json",
     mode: 'cors'
 };
 
@@ -28,6 +29,5 @@ export function getData(url = '', data = {}) {
 }
 
 export function postData(data) {
-    console.log(data)
     return post(`http://localhost:8080/file`, data)
 }

@@ -1,8 +1,8 @@
 const { Users, Blogs, Messages } = require('./db.js');
 const { urlencoded } = require('body-parser');
+const { json } = require('body-parser');
 const cors = require('cors');
 const express = require('express');
-const { json } = require('express');
 
 var db = {
     Users: new Users(),
@@ -19,7 +19,11 @@ var corsOptions = {
 
 app.use(cors(corsOptions))
 
-app.use(json());
+app.use(json())
+app.use(urlencoded({
+    extended: true
+}));
+
 
 app.get('/getUser/:id', function(req, res) {
     res.json(db.Users.Find(parseInt(req.params.id)));
@@ -44,10 +48,6 @@ app.post('/file', (req, res) => {
 
 
 
-
-app.use(urlencoded({
-    extended: true
-}));
 
 app.listen(process.env.PORT || 8080);
 

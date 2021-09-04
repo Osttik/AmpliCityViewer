@@ -108,14 +108,14 @@ export default function Sidebar() {
       		>
       		  	<div className={classes.toolbar}>
       		  	  	<IconButton onClick={handleDrawerChange}>
-      		  	    	{theme.direction === 'rtl' ? <button /> : <button />}
+      		  	    	{theme.direction === 'rtl' ? <button>H</button > :  <button>H</button>}
       		  	  	</IconButton>
       		  	</div>
       		  	<Divider />
       		  	<List>
       		  	  	{['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
       		  	  	  	<ListItem button key={text}>
-      		  	  	    	<ListItemIcon>{index % 2 === 0 ? <button /> : <button />}</ListItemIcon>
+      		  	  	    	<ListItemIcon>{index % 2 === 0 ? <button>H</button > : <button>H</button >}</ListItemIcon>
       		  	  	    	<ListItemText primary={text} />
       		  	  	  	</ListItem>
       		  	  	))}
@@ -124,7 +124,7 @@ export default function Sidebar() {
       		  	<List>
       		  	  	{['All mail', 'Trash', 'Spam'].map((text, index) => (
       		  	  	  	<ListItem button key={text}>
-      		  	  	    	<ListItemIcon>{index % 2 === 0 ? <button /> : <button />}</ListItemIcon>
+      		  	  	    	<ListItemIcon>{index % 2 === 0 ? <button>H</button > : <button>H</button >}</ListItemIcon>
       		  	  	    	<ListItemText primary={text} />
       		  	  	  	</ListItem>
       		  	  	))}
