@@ -12,19 +12,19 @@ export default function MapComponent() {
   	const { isLoaded } = useJsApiLoader({
   	  	id: 'google-map-script',
   	  	googleMapsApiKey: "AIzaSyBGbjk2BZ_kW3OQvpzJfaVHJfYRWQSonGg"
-  	})
+  	});
 
-  	const [map, setMap] = React.useState(null)
+  	const [map, setMap] = React.useState(null);
 
   	const onLoad = React.useCallback(function callback(map) {
   	  	const bounds = new (window as unknown as IJSWindow).google.maps.LatLngBounds();
   	  	map.fitBounds(bounds);
   	  	setMap(map)
-  	}, [])
+  	}, []);
 
   	const onUnmount = React.useCallback(function callback(map) {
   	  	setMap(null)
-  	}, [])
+  	}, []);
 
   	return isLoaded ? (
   	  	<GoogleMap
